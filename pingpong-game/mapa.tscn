@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ceb8hacm2u1gh"]
+
+[ext_resource type="PackedScene" uid="uid://djp4l4agwfjqy" path="res://jugador.tscn" id="1_2jh14"]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_g4v7s"]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_yf5fn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
+normal = Vector2(0, 1)
+distance = 1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yf5fn"]
+distance = -646.0
+
+[node name="Node2D" type="Node2D" unique_id=1480717934]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=170796900]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1161328034]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=920588392]
+shape = SubResource("SeparationRayShape2D_g4v7s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=234096953]
+position = Vector2(1154, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=295259701]
+position = Vector2(-2, -1)
+shape = SubResource("SeparationRayShape2D_yf5fn")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=121588143]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=131287795]
+position = Vector2(0, 1)
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=632816093]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=283356103]
+shape = SubResource("WorldBoundaryShape2D_yf5fn")
+
+[node name="CharacterBody2D" parent="." unique_id=1403375852 instance=ExtResource("1_2jh14")]
+
+[node name="CharacterBody2D2" parent="." unique_id=255753155 instance=ExtResource("1_2jh14")]
+position = Vector2(1004, 148)
+controls = "arrows"
