@@ -1,10 +1,19 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export_enum("ws", "arrows") var controls: String = "ws"
 const SPEED = 300.0
 
+var stun: bool = false
+
 func _physics_process(delta: float) -> void:
 	var direction := 0.0
+	
+	if stun:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 	
 	if controls == "ws":
 		direction = Input.get_axis("w", "s")

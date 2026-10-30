@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://ceb8hacm2u1gh"]
+
+[ext_resource type="Script" uid="uid://cfctein4mrmev" path="res://scripts/mapa.gd" id="1_u1vf7"]
+[ext_resource type="PackedScene" uid="uid://djp4l4agwfjqy" path="res://scenes/jugador.tscn" id="2_tfnl5"]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_g4v7s"]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_yf5fn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g4v7s"]
+normal = Vector2(0, 1)
+distance = 38.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yf5fn"]
+distance = -646.0
+
+[node name="Node2D" type="Node2D" unique_id=1480717934]
+script = ExtResource("1_u1vf7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=170796900]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1161328034]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=920588392]
+shape = SubResource("SeparationRayShape2D_g4v7s")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=234096953]
+position = Vector2(1154, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=295259701]
+position = Vector2(-2, -1)
+shape = SubResource("SeparationRayShape2D_yf5fn")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=121588143]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=131287795]
+position = Vector2(0, 1)
+shape = SubResource("WorldBoundaryShape2D_g4v7s")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=632816093]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=283356103]
+shape = SubResource("WorldBoundaryShape2D_yf5fn")
+
+[node name="CharacterBody2D" parent="." unique_id=1403375852 instance=ExtResource("2_tfnl5")]
+position = Vector2(112, 190)
+
+[node name="CharacterBody2D2" parent="." unique_id=255753155 instance=ExtResource("2_tfnl5")]
+position = Vector2(1004, 190)
+controls = "arrows"
+
+[node name="Control" type="Control" parent="." unique_id=296526041]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=2029633213]
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 647.0
+color = Color(0.41960785, 0.41960785, 0.41960785, 0.43529412)
+
+[node name="Label" type="Label" parent="Control" unique_id=1630661407]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 287.0
+offset_right = 740.0
+offset_bottom = 421.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="barra" type="Control" parent="." unique_id=479304664]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="barra" unique_id=556944710]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 40.0
+color = Color(4.813075e-08, 0.6185706, 0.11651648, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="barra/ColorRect" unique_id=2126225420]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 40.0
+theme_override_constants/separation = 816
+alignment = 1
+
+[node name="Label" type="Label" parent="barra/ColorRect/HBoxContainer" unique_id=1868136359]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Jugador 1"
+
+[node name="Label2" type="Label" parent="barra/ColorRect/HBoxContainer" unique_id=249278010]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Jugador 2"
+horizontal_alignment = 1

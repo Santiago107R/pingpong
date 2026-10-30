@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://bwtbpw6f55mx8"]
 
+[ext_resource type="Script" uid="uid://r5cvlycutm82" path="res://scripts/menu_inicio.gd" id="1_8en7x"]
+
 [node name="Control" type="Control" unique_id=1336906891]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 644.0
+script = ExtResource("1_8en7x")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=568603092]
 layout_mode = 0
@@ -39,3 +42,5 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1567141007]
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
