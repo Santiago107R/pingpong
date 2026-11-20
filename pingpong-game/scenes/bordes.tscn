@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dyojhdvj1agkg"]
+
+[ext_resource type="Script" uid="uid://bpywg2vr8spea" path="res://scripts/bordes.gd" id="1_u8ups"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0ivcc"]
+a = Vector2(0, 648)
+
+[node name="Area2D" type="Area2D" unique_id=462582631]
+script = ExtResource("1_u8ups")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1851224591]
+shape = SubResource("SegmentShape2D_0ivcc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

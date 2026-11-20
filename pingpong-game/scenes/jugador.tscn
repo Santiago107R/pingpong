@@ -4,8 +4,9 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_57qmd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(36.4, 273.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lhlt4"]
+radius = 18.199997
+height = 269.5
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1403375852]
 position = Vector2(112, 148)
@@ -18,4 +19,4 @@ texture = SubResource("CanvasTexture_57qmd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1209465443]
 position = Vector2(17.800003, 136.25)
-shape = SubResource("RectangleShape2D_g4v7s")
+shape = SubResource("CapsuleShape2D_lhlt4")
