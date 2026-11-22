@@ -17,11 +17,13 @@ config/icon="res://sprites/icon.svg"
 
 [audio]
 
-buses/default_bus_layout="uid://4evwcy7a5vda"
+buses/default_bus_layout="uid://bygygp8o3mw4h"
 
 [autoload]
 
 Global="*uid://b36mng27fvxhh"
+MusicaGlobal="*uid://cec4gibvc8ple"
+Pausa="*uid://dplqiqhwcdv1j"
 
 [display]
 

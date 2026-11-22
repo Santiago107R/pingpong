@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bwtbpw6f55mx8"]
 
 [ext_resource type="Script" uid="uid://r5cvlycutm82" path="res://scripts/menu_inicio.gd" id="1_8en7x"]
-[ext_resource type="AudioStream" uid="uid://c7m73xlgtk4n5" path="res://Audio/el chavo del 8 RKT saturado.mp3" id="2_wdvwd"]
 
 [node name="Control" type="Control" unique_id=1336906891]
 layout_mode = 3
@@ -9,11 +8,6 @@ anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 644.0
 script = ExtResource("1_8en7x")
-
-[node name="MusicaFondo" type="AudioStreamPlayer2D" parent="." unique_id=1632949767]
-stream = ExtResource("2_wdvwd")
-autoplay = true
-bus = &"Musica"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=568603092]
 layout_mode = 0
@@ -145,3 +139,4 @@ step = 0.01
 value = 0.8
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="button_down" from="VBoxContainer/Button3" to="." method="_on_button_3_button_down"]

@@ -71,3 +71,17 @@ func otraRonda() -> void:
 
 func empezarJuego() -> void:
 	get_tree().paused = false
+	
+func guardarMatch() -> void:
+	var json = JSON.stringify({
+		"winner": Global.nombreGanador,
+		"loser": Global.nombrePerdedor
+	})
+	
+	var headers = ["Content-Type: application/json"]
+	var url = "http://localhost/pingpong/pingpong-API/api/save_match.php"
+	
+	var error = $HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, json)
+	await $HTTPRequest.request_completed
+	if error != OK:
+		print("Error al iniciar HTTPRequest: ", error)

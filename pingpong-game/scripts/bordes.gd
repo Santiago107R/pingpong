@@ -18,9 +18,23 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Pelota:
 		if lado == "izquierda":
 			Global.puntos_j2 += 1
-			labelPuntos.text = str(Global.puntos_j2)
+			if Global.puntos_j2 != 10:
+				labelPuntos.text = str(Global.puntos_j2)
+				mapa.otraRonda()
+			else:
+				body.queue_free() # Evita que la pelota vuelva a entrar mientras guarda
+				Global.nombreGanador = Global.nombreJugador2
+				Global.nombrePerdedor = Global.nombreJugador
+				await mapa.guardarMatch()
+				get_tree().change_scene_to_file("res://scenes/ganador.tscn")
 		else:
 			Global.puntos_j1 += 1
-			labelPuntos.text = str(Global.puntos_j1)
-		mapa.otraRonda()
-	pass # Replace with function body.
+			if Global.puntos_j1 != 10:
+				labelPuntos.text = str(Global.puntos_j1)
+				mapa.otraRonda()
+			else:
+				body.queue_free() # Evita que la pelota vuelva a entrar mientras guarda
+				Global.nombreGanador = Global.nombreJugador
+				Global.nombrePerdedor = Global.nombreJugador2
+				await mapa.guardarMatch()
+				get_tree().change_scene_to_file("res://scenes/ganador.tscn")

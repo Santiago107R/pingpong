@@ -121,6 +121,7 @@ horizontal_alignment = 1
 position = Vector2(118, 73)
 
 [node name="BordeIzq" parent="." unique_id=462582631 node_paths=PackedStringArray("labelPuntos", "mapa") instance=ExtResource("4_nrd35")]
+lado = "izquierda"
 labelPuntos = NodePath("../barra/ColorRect/HBoxContainer/puntosj2")
 mapa = NodePath("..")
 
@@ -129,3 +130,5 @@ position = Vector2(1153, 0)
 lado = "derecha"
 labelPuntos = NodePath("../barra/ColorRect/HBoxContainer/puntosj1")
 mapa = NodePath("..")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=318533126]

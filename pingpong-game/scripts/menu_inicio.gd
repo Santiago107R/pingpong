@@ -9,8 +9,6 @@ func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/nombreJugadores.tscn")
 	pass # Replace with function body.
 
-
-
 @onready var btn_opciones: Button = $VBoxContainer/Button2
 @onready var panel_opciones: Panel = $PanelOpciones
 @onready var btn_cerrar: Button = $PanelOpciones/BtnCerrar
@@ -55,3 +53,7 @@ func _on_sonidos_changed(valor: float) -> void:
 	var db := linear_to_db(max(valor, 0.0001)) if valor > 0.0 else -80.0
 	AudioServer.set_bus_volume_db(bus_sonidos, db)
 	AudioServer.set_bus_mute(bus_sonidos, valor <= 0.001)
+
+
+func _on_button_3_button_down() -> void:
+	get_tree().quit()

@@ -20,6 +20,11 @@ func _physics_process(delta: float) -> void:
 	var colision = move_and_collide(velocity * delta)
 
 	if colision:
+		var objeto_chocado = colision.get_collider()
+		
+		if objeto_chocado is Player:
+			MusicaGlobal.reproducir_rebote()
+		
 		var direccion_rebote = velocity.bounce(colision.get_normal())
 
 		#velocidad_actual += incremento_velocidad
