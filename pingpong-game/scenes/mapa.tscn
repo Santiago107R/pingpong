@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cfctein4mrmev" path="res://scripts/mapa.gd" id="1_u1vf7"]
 [ext_resource type="PackedScene" uid="uid://djp4l4agwfjqy" path="res://scenes/jugador.tscn" id="2_tfnl5"]
+[ext_resource type="PackedScene" uid="uid://b1qk0glbagocj" path="res://scenes/pelota.tscn" id="3_tfnl5"]
+[ext_resource type="PackedScene" uid="uid://dyojhdvj1agkg" path="res://scenes/bordes.tscn" id="4_nrd35"]
 
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_g4v7s"]
 
@@ -14,8 +16,9 @@ distance = 38.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yf5fn"]
 distance = -646.0
 
-[node name="Node2D" type="Node2D" unique_id=1480717934]
+[node name="Node2D" type="Node2D" unique_id=1480717934 node_paths=PackedStringArray("pelota")]
 script = ExtResource("1_u1vf7")
+pelota = NodePath("pelota")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=170796900]
 offset_right = 1152.0
@@ -88,9 +91,9 @@ color = Color(4.813075e-08, 0.6185706, 0.11651648, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="barra/ColorRect" unique_id=2126225420]
 layout_mode = 0
-offset_right = 1153.0
+offset_right = 1152.0
 offset_bottom = 40.0
-theme_override_constants/separation = 816
+theme_override_constants/separation = 250
 alignment = 1
 
 [node name="Label" type="Label" parent="barra/ColorRect/HBoxContainer" unique_id=1868136359]
@@ -98,8 +101,31 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Jugador 1"
 
+[node name="puntosj1" type="Label" parent="barra/ColorRect/HBoxContainer" unique_id=1500345653]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="puntosj2" type="Label" parent="barra/ColorRect/HBoxContainer" unique_id=1327538812]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "0"
+
 [node name="Label2" type="Label" parent="barra/ColorRect/HBoxContainer" unique_id=249278010]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Jugador 2"
 horizontal_alignment = 1
+
+[node name="pelota" parent="." unique_id=381271301 instance=ExtResource("3_tfnl5")]
+position = Vector2(118, 73)
+
+[node name="BordeIzq" parent="." unique_id=462582631 node_paths=PackedStringArray("labelPuntos", "mapa") instance=ExtResource("4_nrd35")]
+labelPuntos = NodePath("../barra/ColorRect/HBoxContainer/puntosj2")
+mapa = NodePath("..")
+
+[node name="BordeDe" parent="." unique_id=1634360305 node_paths=PackedStringArray("labelPuntos", "mapa") instance=ExtResource("4_nrd35")]
+position = Vector2(1153, 0)
+lado = "derecha"
+labelPuntos = NodePath("../barra/ColorRect/HBoxContainer/puntosj1")
+mapa = NodePath("..")

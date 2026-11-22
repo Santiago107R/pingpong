@@ -32,6 +32,10 @@ func _on_button_pressed() -> void:
 	var headers = ["Content-Type: application/json"]
 	var url = "http://localhost/pingpong/pingpong-API/api/init_players.php"
 	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, json)
+	
+	Global.nombreJugador = nombreJugador.text.strip_edges()
+	Global.nombreJugador2 = nombreJugador2.text.strip_edges()
+	
 	get_tree().change_scene_to_file("res://scenes/mapa.tscn")
 	
 	pass # Replace with function body.
