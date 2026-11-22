@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cky4eq4invcwa"
+path="res://.godot/imported/el chavo del 8 RKT saturado.mp3-e9318f2ac1226b64c3c370bfa58c685f.mp3str"
+
+[deps]
+
+source_file="res://scripts/el chavo del 8 RKT saturado.mp3"
+dest_files=["res://.godot/imported/el chavo del 8 RKT saturado.mp3-e9318f2ac1226b64c3c370bfa58c685f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

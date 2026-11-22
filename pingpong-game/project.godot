@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="pingpong_GAME"
-run/main_scene="uid://ceb8hacm2u1gh"
+run/main_scene="uid://bwtbpw6f55mx8"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://4evwcy7a5vda"
 
 [autoload]
 
