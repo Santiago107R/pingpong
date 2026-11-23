@@ -1,6 +1,5 @@
 extends Control
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
@@ -9,7 +8,7 @@ func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/nombreJugadores.tscn")
 	pass # Replace with function body.
 
-@onready var btn_opciones: Button = $VBoxContainer/Button2
+@onready var btn_opciones: Button = $VBoxContainer/Button3
 @onready var panel_opciones: Panel = $PanelOpciones
 @onready var btn_cerrar: Button = $PanelOpciones/BtnCerrar
 @onready var slider_musica: HSlider = $PanelOpciones/SliderMusica
@@ -55,5 +54,10 @@ func _on_sonidos_changed(valor: float) -> void:
 	AudioServer.set_bus_mute(bus_sonidos, valor <= 0.001)
 
 
-func _on_button_3_button_down() -> void:
+func _on_button_4_button_down() -> void:
 	get_tree().quit()
+
+
+func _on_button_2_button_down() -> void:
+	get_tree().change_scene_to_file("res://scenes/historial.tscn")
+	pass # Replace with function body.

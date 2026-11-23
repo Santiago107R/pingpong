@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://x316fr0y1i66"]
+
+[ext_resource type="Script" uid="uid://dkbsgusrwf4ho" path="res://scripts/historial.gd" id="1_saj2k"]
+
+[node name="Control" type="Control" unique_id=99654966]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1154.0
+offset_bottom = 645.0
+script = ExtResource("1_saj2k")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=1313972302]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1119205943]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 137.0
+offset_right = 745.0
+offset_bottom = 475.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1746451427]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=138635463]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 529.0
+offset_right = 747.0
+offset_bottom = 580.0
+text = "Volver"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

@@ -3,12 +3,10 @@ extends Control
 @onready var nombreJugador = $HBoxContainer/VBoxContainer/Nombre 
 @onready var nombreJugador2 = $HBoxContainer/VBoxContainer3/Nombre2
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
@@ -27,7 +25,6 @@ func _on_button_pressed() -> void:
 		$AcceptDialog.popup_centered()
 		return 
 	
-	# Opcional: desactivar el botón para evitar doble clic mientras carga
 	$HBoxContainer/VBoxContainer2/Button.disabled = true 
 	
 	var json = JSON.stringify({
@@ -44,7 +41,6 @@ func _on_button_pressed() -> void:
 		$HBoxContainer/VBoxContainer2/Button.disabled = false
 		return
 
-	# Esperamos a que el servidor responda antes de destruir la escena
 	var response = await $HTTPRequest.request_completed
 	var response_code = response[1]
 	
