@@ -7,10 +7,10 @@ class_name Pelota
 
 var velocidad_actual: float
 var puede_moverse: bool = false
-var posicion_inicial: Vector2 # 1. Nueva variable para guardar el centro
+var posicion_inicial: Vector2 
 
 func _ready() -> void:
-	posicion_inicial = global_position # 2. Guarda donde estaba al iniciar
+	posicion_inicial = global_position
 	preparar_pelota()
 
 func _physics_process(delta: float) -> void:
@@ -34,7 +34,7 @@ func preparar_pelota() -> void:
 	puede_moverse = false
 	velocity = Vector2.ZERO
 	velocidad_actual = velocidad_inicial
-	global_position = posicion_inicial # 3. La devuelve al centro en cada ronda
+	global_position = posicion_inicial
 
 func arrancar_movimiento() -> void:
 	velocidad_actual = velocidad_inicial

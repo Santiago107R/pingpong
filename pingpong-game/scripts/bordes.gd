@@ -21,7 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 				labelPuntos.text = str(Global.puntos_j2)
 				mapa.otraRonda()
 			else:
-				body.queue_free() # Evita que la pelota vuelva a entrar mientras guarda
+				body.queue_free() 
 				Global.nombreGanador = Global.nombreJugador2
 				Global.nombrePerdedor = Global.nombreJugador
 				await mapa.guardarMatch()
@@ -32,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 				labelPuntos.text = str(Global.puntos_j1)
 				mapa.otraRonda()
 			else:
-				body.queue_free() # Evita que la pelota vuelva a entrar mientras guarda
+				body.queue_free() 
 				Global.nombreGanador = Global.nombreJugador
 				Global.nombrePerdedor = Global.nombreJugador2
 				await mapa.guardarMatch()

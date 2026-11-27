@@ -3,20 +3,6 @@ extends Control
 @onready var nombreJugador = $HBoxContainer/VBoxContainer/Nombre 
 @onready var nombreJugador2 = $HBoxContainer/VBoxContainer3/Nombre2
 
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-func _process(delta: float) -> void:
-	pass
-
-func _on_text_edit_text_changed() -> void:
-	pass # Replace with function body.
-
-
-func _on_text_edit_2_text_changed() -> void:
-	pass # Replace with function body.
-
 func _on_button_pressed() -> void:
 	var p1 = nombreJugador.text.strip_edges()
 	var p2 = nombreJugador2.text.strip_edges()
