@@ -2,16 +2,15 @@
 
 [ext_resource type="Script" uid="uid://b2ikrrr4ov0lo" path="res://scripts/musica_global.gd" id="1_3qnlw"]
 [ext_resource type="AudioStream" uid="uid://8hdd1uy3x8a" path="res://Audio/rebote.mp3" id="1_6or7s"]
-[ext_resource type="AudioStream" uid="uid://c7m73xlgtk4n5" path="res://Audio/el chavo del 8 RKT saturado.mp3" id="2_cavs4"]
+[ext_resource type="AudioStream" uid="uid://cmvi5kwt3nbeo" path="res://Audio/musica_fondo.mp3" id="3_3qnlw"]
 
 [node name="AudioManager" type="Node2D" unique_id=734021758]
 script = ExtResource("1_3qnlw")
 
 [node name="rebote" type="AudioStreamPlayer2D" parent="." unique_id=1105292399]
 stream = ExtResource("1_6or7s")
-bus = &"Sonido"
 
 [node name="MusicaFondo" type="AudioStreamPlayer2D" parent="." unique_id=394006775]
-stream = ExtResource("2_cavs4")
+stream = ExtResource("3_3qnlw")
 autoplay = true
 bus = &"Musica"
